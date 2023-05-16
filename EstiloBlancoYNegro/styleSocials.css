@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: Space-between;
+  padding: 150px 0;
+  align-items: center;
+  min-height: 100vh;
+  background: #000000;
+}
+.btn1 {
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.btn1::after {
+  content: "facebook";
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  opacity: 0;
+  transition: 0s;
+}
+.btn1 .s1btn1 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  top: 150px;
+}
+.s1btn1::after {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  top: 0px;
+  transition: 0.5s;
+}
+.s1btn1::before {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  top: 148px;
+  transition: 0.5s;
+}
+.btn1 .s2btn1 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  top: 150px;
+}
+.s2btn1::after {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  opacity: 1;
+  width: 2px;
+  height: 0px;
+  background: #fff;
+  bottom: 0px;
+  right: 0;
+  transition: 0.5s;
+}
+.s2btn1::before {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  opacity: 1;
+  width: 2px;
+  height: 0px;
+  background: #fff;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.btn1:hover {
+  color: #3b5998;
+}
+.btn1:hover:after {
+  transform: translateX(110px);
+  opacity: 1;
+  transition: transform 0s, opacity 1s;
+}
+.btn1:hover .s1btn1::after {
+  background: #3b5998;
+  transform: translateX(-100px);
+}
+.btn1:hover .s1btn1::before {
+  background: #3b5998;
+  transform: translateX(100px);
+}
+.btn1:hover .s2btn1::after {
+  background: #3b5998;
+  height: 50px;
+}
+.btn1:hover .s2btn1::before {
+  background: #3b5998;
+  height: 50px;
+}
+.btn2 {
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.btn2::after {
+  content: "instagram";
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  opacity: 0;
+  transition: 0s;
+}
+.btn2 .s1btn2 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  top: 323px;
+}
+.s1btn2::after {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  top: 0px;
+  transition: 0.5s;
+}
+.s1btn2::before {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  top: 148px;
+  transition: 0.5s;
+}
+.btn2 .s2btn2 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  top: 323px;
+}
+.s2btn2::after {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  opacity: 1;
+  width: 2px;
+  height: 0px;
+  background: #fff;
+  bottom: 0px;
+  right: 0;
+  transition: 0.5s;
+}
+.s2btn2::before {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  opacity: 1;
+  width: 2px;
+  height: 0px;
+  background: #fff;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.btn2:hover {
+  color: #e1306c;
+}
+.btn2:hover:after {
+  transform: translateX(120px);
+  opacity: 1;
+  transition: transform 0s, opacity 1s;
+}
+.btn2:hover .s1btn2::after {
+  background: #e1306c;
+  transform: translateX(-100px);
+}
+.btn2:hover .s1btn2::before {
+  background: #e1306c;
+  transform: translateX(100px);
+}
+.btn2:hover .s2btn2::after {
+  background: #e1306c;
+  height: 50px;
+}
+.btn2:hover .s2btn2::before {
+  background: #e1306c;
+  height: 50px;
+}
+.btn3 {
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.btn3::after {
+  content: "whatsapp";
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  opacity: 0;
+  transition: 0s;
+}
+.btn3 .s1btn3 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  top: 496px;
+}
+.s1btn3::after {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  top: 0px;
+  transition: 0.5s;
+}
+.s1btn3::before {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  top: 148px;
+  transition: 0.5s;
+}
+.btn3 .s2btn3 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  top: 496px;
+}
+.s2btn3::after {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  opacity: 1;
+  width: 2px;
+  height: 0px;
+  background: #fff;
+  bottom: 0px;
+  right: 0;
+  transition: 0.5s;
+}
+.s2btn3::before {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  opacity: 1;
+  width: 2px;
+  height: 0px;
+  background: #fff;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.btn3:hover {
+  color: #075e54;
+}
+.btn3:hover:after {
+  transform: translateX(120px);
+  opacity: 1;
+  transition: transform 0s, opacity 1s;
+}
+.btn3:hover .s1btn3::after {
+  background: #075e54;
+  transform: translateX(-100px);
+}
+.btn3:hover .s1btn3::before {
+  background: #075e54;
+  transform: translateX(100px);
+}
+.btn3:hover .s2btn3::after {
+  background: #075e54;
+  height: 50px;
+}
+.btn3:hover .s2btn3::before {
+  background: #075e54;
+  height: 50px;
+}
+.btn4 {
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.btn4::after {
+  content: "twitter";
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  opacity: 0;
+  transition: 0s;
+}
+.btn4 .s1btn4 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  top: 669px;
+}
+.s1btn4::after {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  top: 0px;
+  transition: 0.5s;
+}
+.s1btn4::before {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  width: 150px;
+  height: 2px;
+  background: #fff;
+  top: 148px;
+  transition: 0.5s;
+}
+.btn4 .s2btn4 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  top: 669px;
+}
+.s2btn4::after {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  opacity: 1;
+  width: 2px;
+  height: 0px;
+  background: #fff;
+  bottom: 0px;
+  right: 0;
+  transition: 0.5s;
+}
+.s2btn4::before {
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  opacity: 1;
+  width: 2px;
+  height: 0px;
+  background: #fff;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.btn4:hover {
+  color: #00acee;
+}
+.btn4:hover:after {
+  transform: translateX(100px);
+  opacity: 1;
+  transition: transform 0s, opacity 1s;
+}
+.btn4:hover .s1btn4::after {
+  background: #00acee;
+  transform: translateX(-100px);
+}
+.btn4:hover .s1btn4::before {
+  background: #00acee;
+  transform: translateX(100px);
+}
+.btn4:hover .s2btn4::after {
+  background: #00acee;
+  height: 50px;
+}
+.btn4:hover .s2btn4::before {
+  background: #00acee;
+  height: 50px;
+}

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylePalabras.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Palabras</title>
+</head>
+<body>
+    <div class="color" id="color1"></div>
+    <div class="color" id="color2"></div>
+    <div class="color" id="color3"></div>
+    <div class="color" id="color4"></div>
+    <div class="color" id="color5"></div>
+    <div class="container">
+        <div class="containerModificadores">
+        </div>
+        <div class="containerTabla">
+            <form class="tabla" id="tabla">
+                <span class="letra" onclick="activate(id)" id="1">a</span>
+                <span class="letra" onclick="activate(id)" id="2">g</span>
+                <span class="letra" onclick="activate(id)" id="3">r</span>
+                <span class="letra" onclick="activate(id)" id="4">m</span>
+                <span class="letra" onclick="activate(id)" id="5">i</span>
+                <span class="letra" onclick="activate(id)" id="6">f</span>
+                <span class="letra" onclick="activate(id)" id="7">w</span>
+                <span class="letra" onclick="activate(id)" id="8">o</span>
+                <span class="letra" onclick="activate(id)" id="9">n</span>
+                <span class="letra" onclick="activate(id)" id="10">e</span>
+                <span class="letra" onclick="activate(id)" id="11">a</span>
+                <span class="letra" onclick="activate(id)" id="12">l</span>
+                <span class="letra" onclick="activate(id)" id="13">o</span>
+                <span class="letra" onclick="activate(id)" id="14">c</span>
+                <span class="letra" onclick="activate(id)" id="15">g</span>
+                <span class="letra" onclick="activate(id)" id="16">p</span>
+                <span class="letra" onclick="activate(id)" id="17">o</span>
+                <span class="letra" onclick="activate(id)" id="18">n</span>
+                <span class="letra" onclick="activate(id)" id="19">e</span>
+                <span class="letra" onclick="activate(id)" id="20">v</span>
+                <span class="letra" onclick="activate(id)" id="21">l</span>
+                <span class="letra" onclick="activate(id)" id="22">u</span>
+                <span class="letra" onclick="activate(id)" id="23">e</span>
+                <span class="letra" onclick="activate(id)" id="24">c</span>
+                <span class="letra" onclick="activate(id)" id="25">q</span>
+            </form>
+            <input type="text" class="palabra" id="palabra" placeholder=". . ." readonly="true">
+            <div class="botones" id="botones">
+                <span class="boton aceptar" id="aceptar" onclick="checkWord()"><i class="material-icons">done</i></span>
+                <span class="boton cancelar" id="cancelar" onclick="erase()"><i class="material-icons">close</i></span>
+            </div>
+        </div>
+        <div class="containerLista">
+            <span class="palabrasEncontradas">PALABRAS ENCONTRADAS</span>
+            <ul class="lista">
+                <li onmouseover="showWord('PALO')" onmouseout="hideWord('PALO')">PALO</li>
+                <li onmouseover="showWord('CONO')" onmouseout="hideWord('CONO')">CONO</li>
+                <li onmouseover="showWord('POLO')" onmouseout="hideWord('POLO')">POLO</li>
+                <li onmouseover="showWord('VEN')" onmouseout="hideWord('VEN')">VEN</li>
+                <li onmouseover="showWord('OLA')" onmouseout="hideWord('OLA')">OLA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+                <li onmouseover="showWord('LUPA')" onmouseout="hideWord('LUPA')">LUPA</li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var dimension = 5
+        var palabraActual = []
+        var palabraInput = document.getElementById("palabra");
+        var terminarLoop = true;
+
+        function activate(id){
+            var letraSeleccionada = document.getElementById(id);
+            // si letraSeleccionada es la última seleccionada, entonces se desactiva
+            if (letraSeleccionada.classList.contains("lastActive")) {
+                letraSeleccionada.classList.remove("lastActive");
+                palabraActual.pop();
+                palabraInput.value = getPalabra(palabraActual);
+                // queda como lastActive la letra anterior, si es que existe
+                if (palabraActual.length > 0) {
+                    var letraAnterior = document.getElementById(palabraActual[palabraActual.length-1]);
+                    letraAnterior.classList.remove("active");
+                    letraAnterior.classList.add("lastActive");
+                }
+                checkButtonStatus();
+                return;
+            }
+            // si letraSeleccionada no es la última seleccionada pero está activada, queda como lastActive
+            // y se desactivan todas las letras que estaban después de ella
+            if (letraSeleccionada.classList.contains("active")) {
+                // sabemos que palabraActual.length > 1
+                while (palabraActual[palabraActual.length-1] != id) {
+                    var letra = document.getElementById(palabraActual[palabraActual.length-1]);
+                    letra.classList.remove("active");
+                    letra.classList.remove("lastActive");
+                    palabraActual.pop();
+                }
+                palabraInput.value = getPalabra(palabraActual);
+                letraSeleccionada.classList.remove("active");
+                letraSeleccionada.classList.add("lastActive");
+                checkButtonStatus();
+                return;
+            }
+            // si un vecino no es el último seleccionado, entonces letraSeleccionada es el último seleccionado y se desactivan todos los demas
+            var neighbours = detectNeighbours(id);
+            var encontre = false;
+            for (var i = 0; i < neighbours.length; i++) {
+                var neighbour = document.getElementById(neighbours[i]);
+                if (neighbour.classList.contains("lastActive")) {
+                    neighbour.classList.remove("lastActive");
+                    neighbour.classList.add("active");
+                    letraSeleccionada.classList.add("lastActive");
+                    palabraActual.push(id);
+                    palabraInput.value = getPalabra(palabraActual);
+                    encontre = true;
+                    break;
+                }
+            }
+            if (!encontre) {
+                // eliminar las clases active y lastActive de todas las letras
+                for (var i = 1; i <= (dimension*dimension); i++) {
+                    var letra= document.getElementById(i);
+                    letra.classList.remove("active");
+                    letra.classList.remove("lastActive");
+                }
+                palabraActual = [];
+                letraSeleccionada.classList.add("lastActive");
+                palabraActual.push(id);
+                palabraInput.value = getPalabra(palabraActual);
+            }
+            checkButtonStatus();
+        }
+
+        function detectNeighbours(id){
+            var pos = parseInt(id);
+            var neighbours = [];
+            var row = Math.ceil(pos/dimension);
+            var upRowValues = getRowValues(row-1);
+            var rowValues = getRowValues(row);
+            var downRowValues = getRowValues(row+1);
+            if (rowValues.includes(pos-1)) {
+                neighbours.push(pos-1);
+            }
+            if (rowValues.includes(pos+1)) {
+                neighbours.push(pos+1);
+            }
+            if (upRowValues.includes(pos-dimension+1)) {
+                neighbours.push(pos-dimension+1);
+            }
+            if (upRowValues.includes(pos-dimension-1)) {
+                neighbours.push(pos-dimension-1);
+            }
+            if (upRowValues.includes(pos-dimension)) {
+                neighbours.push(pos-dimension);
+            }
+            if (downRowValues.includes(pos+dimension-1)) {
+                neighbours.push(pos+dimension-1);
+            }
+            if (downRowValues.includes(pos+dimension)) {
+                neighbours.push(pos+dimension);
+            }
+            if (downRowValues.includes(pos+dimension+1)) {
+                neighbours.push(pos+dimension+1);
+            }
+            return neighbours;
+        }
+
+        function getRowValues(row) {
+            var rowValues = [];
+            if ((row > 0) && (row <= dimension)) {
+                for (let i = 1; i <= dimension; i++) {
+                    rowValues.push((row-1)*dimension + i);
+                }
+            } 
+            return rowValues;
+        }
+
+        function getPalabra(arrayIDs){
+            var palabra = "";
+            for (var i = 0; i < arrayIDs.length; i++) {
+                var letra = document.getElementById(arrayIDs[i]);
+                palabra += letra.innerHTML;
+            }
+            return palabra;
+        }
+
+        function checkButtonStatus() {
+            if (palabraActual.length == 0) {
+                document.getElementById("cancelar").classList.remove("active");
+            }
+            if (palabraActual.length <= 2) {
+                document.getElementById("aceptar").classList.remove("active");
+            }
+            if (palabraActual.length > 0) {
+                document.getElementById("cancelar").classList.add("active");
+            }
+            if (palabraActual.length > 2) {
+                document.getElementById("aceptar").classList.add("active");
+            }
+            
+        }
+
+        async function checkWord() {
+            // aca se debería checkear que la palabra exista en el diccionario y que no haya sido encontrada antes
+            var colors = document.getElementsByClassName("color");
+            var tabla = document.getElementById("tabla");
+            var botonAceptar = document.getElementById("aceptar");
+            var palabra = document.getElementById("palabra");
+            if (false) {
+                // aca se debería agregar a la lista de palabras encontradas
+                erase();
+                for (var i = 0; i < colors.length; i++) {
+                    colors[i].classList.add("success");
+                }
+                tabla.classList.add("success");
+                await sleep(1000);
+                for (var i = 0; i < colors.length; i++) {
+                    colors[i].classList.remove("success");
+                }
+                tabla.classList.remove("success");
+            } else {
+                for (var i = 0; i < colors.length; i++) {
+                    colors[i].classList.add("fail");
+                }
+                tabla.classList.add("fail");
+                for (var i = 0; i < botones.length; i++) {
+                    botones[i].style.pointerevents = "none";
+                }
+                palabra.classList.add("fail");
+                // 3s de penalización
+                botonAceptar.classList.add("blocked");
+                await sleep(1000);
+                for (var i = 0; i < colors.length; i++) {
+                    colors[i].classList.remove("fail");
+                }
+                tabla.classList.remove("fail");
+                for (var i = 0; i < botones.length; i++) {
+                    botones[i].style.pointerevents = "auto";
+                }
+                palabra.classList.remove("fail");
+                await sleep(3000);
+                botonAceptar.classList.remove("blocked");
+            }
+        }
+
+        function erase() {
+            for (var i = 1; i <= (dimension*dimension); i++) {
+                var letra = document.getElementById(i);
+                letra.classList.remove("active");
+                letra.classList.remove("lastActive");
+            }
+            palabraActual = [];
+            palabraInput.value = "";
+            checkButtonStatus();
+        }
+
+        function showWord(word) {
+            // si o si tiene que encontrar un path para la palabra
+            var wordPath = getPath(word);
+            // seleccionamos las letras
+            for (var i = 0; i < wordPath.length; i++) {
+                var letra = document.getElementById(wordPath[i]);
+                letra.classList.add("shine");
+                letra.style.animationDelay = (i*0.4) + "s";
+            }
+        }
+
+        function hideWord(word) {
+            var wordPath = getPath(word);
+            // seleccionamos las letras
+            for (var i = 0; i < wordPath.length; i++) {
+                var letra = document.getElementById(wordPath[i]);
+                letra.classList.remove("shine");
+            }
+        }
+
+        function getPath(word) {
+            // siempre devuelve el mismo path para la misma word
+            var wordPath = [];
+            if (word.length == 0) {
+                return wordPath;
+            }
+            // encontramos la primer letra de la palabra
+            for (var i = 1; i <= (dimension*dimension); i++) {
+                var letra = document.getElementById(i);
+                if (letra.innerHTML.toUpperCase() == word[0].toUpperCase()) {
+                    // encontramos la primer letra, pero podría no ser la correcta
+                    wordPath.push(i);
+                }
+                // intentamos encontrar el resto de las letras usando detectNeighbours
+                for (var j = 1; j < word.length; j++) {
+                    var neighbours = detectNeighbours(wordPath[j-1]);
+                    for (var z = 0; z < neighbours.length; z++) {
+                        var neighbour = document.getElementById(neighbours[z]);
+                        if (neighbour.innerHTML.toUpperCase() == word[j].toUpperCase()) {
+                            wordPath.push(neighbours[z]);
+                            break;
+                        }
+                    }
+                }
+                // si los largos son iguales es porque encontramos la palabra
+                if (wordPath.length == word.length) {
+                    break;
+                } else {
+                    // en caso contrario, reiniciamos el path y seguimos buscando
+                    wordPath = [];
+                }
+            }
+            return wordPath;
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
+</body>
+</html>

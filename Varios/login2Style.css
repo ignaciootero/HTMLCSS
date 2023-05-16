@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgb(83, 105, 136);
+  transition: 0.5s;
+}
+section .bx {
+  width: 480px;
+  height: 580px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section .container {
+  width: 400px;
+  height: 500px;
+  padding: 25px;
+  margin-top: 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(200px);
+  transition: 0.3s;
+}
+section .container.ingreso {
+  position: absolute;
+  background: rgb(121, 153, 182);
+  box-shadow: 0 0 500px rgb(121, 153, 182);
+  top: 0;
+}
+section .container.ingreso:hover {
+  animation: animate1 1s linear infinite;
+}
+section .container.registro {
+  position: absolute;
+  background: rgb(179, 109, 109);
+  box-shadow: 0 0 500px rgb(179, 109, 109);
+  top: -1000px;
+}
+section .container.registro:hover {
+  animation: animate2 1s linear infinite;
+}
+section .container.ingreso.active {
+  position: absolute;
+  top: 1000px;
+}
+section .container.registro.active {
+  position: absolute;
+  top: 0px;
+}
+section .container.registro h2 {
+  color: rgb(129, 74, 74);
+}
+section .container.registro .olvidar a {
+  color: rgb(129, 74, 74);
+}
+section.active {
+  background: rgb(129, 74, 74);
+}
+section .container.registro .olvidar {
+  margin-top: 25px;
+}
+section .container:hover {
+  transform: scale(105%);
+}
+@keyframes animate1 {
+  0%,
+  100% {
+    box-shadow: 0 0 100px rgb(121, 153, 182);
+  }
+  50% {
+    box-shadow: 0 0 120px rgb(121, 153, 182);
+  }
+}
+@keyframes animate2 {
+  0%,
+  100% {
+    box-shadow: 0 0 100px rgb(179, 109, 109);
+  }
+  50% {
+    box-shadow: 0 0 120px rgb(179, 109, 109);
+  }
+}
+section .container.registro:hover {
+  box-shadow: 0 0 30px rgb(179, 109, 109);
+  transform: scale(105%);
+}
+section .container h2 {
+  color: rgb(83, 105, 136);
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 40px;
+  pointer-events: none;
+  text-transform: lowercase;
+  font-weight: 700;
+  transition: 0.5s;
+}
+section .container:hover h2 {
+  letter-spacing: 3px;
+  font-size: 50px;
+  font-weight: 800;
+}
+section .container input {
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #fff;
+  width: 100%;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+}
+section .container input::placeholder {
+  color: white;
+}
+section .container input[type="submit"] {
+  text-align: center;
+  position: relative;
+  left: 25%;
+  max-width: 50%;
+  margin-top: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+section .container input[type="submit"]:hover {
+  max-width: 60%;
+  height: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  left: 20%;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+section .container .olvidar {
+  position: absolute;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: space-between;
+}
+section .container .olvidar a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: rgb(83, 105, 136);
+}
+section .container .registrar {
+  background: red;
+}

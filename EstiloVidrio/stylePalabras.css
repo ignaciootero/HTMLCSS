@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #07262e;
+}
+.color {
+    position: absolute;
+    filter: blur(32vh);
+    border-radius: 50%;
+    animation: animation1 10s linear infinite;
+}
+@keyframes animation1 {
+    0% {
+        filter: blur(32vh);
+        transform: scale(1);
+    }
+    50% {
+        filter: blur(24vh);
+        transform: scale(1.25);
+    }
+    100% {
+        filter: blur(35vh);
+        transform: scale(1);     
+    }
+}
+.color:nth-child(1) {
+    top: -10%;
+    right: 25%;
+    width: 50vh;
+    height: 50vh;
+    background: #44c2f3;
+    transition: 0.4s;
+}
+.color:nth-child(1).success {
+    background: #34ff348a;
+    transition: 0.4s;
+}
+.color:nth-child(1).fail {
+    background: #f725258a;
+    transition: 0.4s;
+}
+.color:nth-child(2) {
+    bottom: -20%;
+    left: 0%;
+    width: 50vh;
+    height: 50vh;
+    background: #c579f8;
+    transition: 0.4s;
+}
+.color:nth-child(2).success {
+    background: #4cdf4c8a;
+    transition: 0.4s;
+}
+.color:nth-child(2).fail {
+    background: #cf22228a;
+    transition: 0.4s;
+}
+.color:nth-child(3) {
+    bottom: -15%;
+    right: -5%;
+    width: 80vh;
+    height: 80vh;
+    background: #6b5de6;
+    transition: 0.4s;
+}
+.color:nth-child(3).success {
+    background: #34b6348a;
+    transition: 0.4s;
+}
+.color:nth-child(3).fail {
+    background: #f720208a;
+    transition: 0.4s;
+}
+.color:nth-child(4) {
+    bottom: 5%;
+    right: 45%;
+    width: 60vh;
+    height: 60vh;
+    background: #70f7d5;
+    transition: 0.4s;
+}
+.color:nth-child(4).success {
+    background: #4cdf4c8a;
+    transition: 0.4s;
+}
+.color:nth-child(4).fail {
+    background: #e71e1e8a;
+    transition: 0.4s;
+}
+.color:nth-child(5) {
+    top: -20%;
+    left: -10%;
+    width: 80vh;
+    height: 80vh;
+    background: #f189d7;
+    transition: 0.4s;
+}
+.color:nth-child(5).success {
+    background: #4b9c4b8a;
+    transition: 0.4s;
+}
+.color:nth-child(5).fail {
+    background: #ff17178a;
+    transition: 0.4s;
+}
+.container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+    width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+}
+.containerModificadores {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+.containerLista {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+.containerTabla {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+.containerTabla .tabla {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* dimension */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    border-right: 1px solid rgba(255, 255, 255, 0);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+.containerTabla .tabla.success {
+    border-top: 3px solid rgba(50, 250, 0, 0.8);
+    border-left: 3px solid rgba(50, 250, 0, 0.8);
+    border-bottom: 3px solid rgba(50, 250, 0, 0.8);
+    border-right: 3px solid rgba(50, 250, 0, 0.8);
+    background: rgba(50, 250, 0, 0.1);
+    transition: 0.3s;
+}
+.containerTabla .tabla.fail {
+    border-top: 3px solid rgba(255, 0, 0, 0.8);
+    border-left: 3px solid rgba(255, 0, 0, 0.8);
+    border-bottom: 3px solid rgba(255, 0, 0, 0.8);
+    border-right: 3px solid rgba(255, 0, 0, 0.8);
+    background: rgba(255, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.containerTabla .tabla span {
+    display: grid;
+    place-items: center;
+    width: min(calc(56vh / 5), calc(42vw / 5)); /* dimension */
+    height: min(calc(56vh / 5), calc(42vw / 5)); /* dimension */
+    color: #fff;
+    background: rgba(255, 255, 255, 0);
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: min(calc(56vh / 10), calc(42vw / 10)); /* dimension*2 */
+    user-select: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.1s;
+}
+.containerTabla .tabla span:hover {
+    font-size: min(calc(56vh / 9), calc(42vw / 9)); /* dimension*2 - 1 */
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.08);
+    transition: 0.1s;
+}
+.containerTabla .tabla span.active {
+    font-size: min(calc(56vh / 9), calc(42vw / 9)); /* dimension*2 - 1 */
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.2);
+    color: #07262e;
+    transition: 0.1s;
+}
+.containerTabla .tabla span.lastActive {
+    font-size: min(calc(56vh / 9), calc(42vw / 9)); /* dimension*2 - 1 */
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.5);
+    border: 5px solid #07262e;
+    color: #07262e;
+    transition: 0.1s;
+}
+.containerTabla .tabla span.shine {
+    animation: shine 4s linear infinite;
+    animation-delay: 0s;
+}
+@keyframes shine {
+    0%, 40%, 100% {
+        background: rgba(255, 255, 255, 0);;
+    }
+    10%, 30% {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+.containerTabla .palabra {
+    width: min(56vh, 42vw);
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-weight: 400;
+    font-size: min(calc(56vh / 15), calc(42vw / 15)); /* dimension*3 */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    margin-top: 5vh;
+    transition: 0.3s;
+}
+.containerTabla .palabra:hover {
+    letter-spacing: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 15px 15px 45px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+::placeholder { 
+    color: rgba(255, 255, 255, 0.65);;
+}
+.containerTabla .palabra.fail {
+    color: rgba(255, 0, 0, 1);
+    background: rgba(255, 255, 255, 0.05);
+    letter-spacing: 6px;
+    transition: 0.3s;
+}
+.containerTabla .botones {
+    width: min(56vh, 42vw);
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5vh;
+}
+.containerTabla .botones .boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: min(8vh, 6.5vw);
+    height: min(8vh, 6.5vw);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    cursor: default;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+.containerTabla .botones .boton i{
+    font-size: min(4vh, 3.2vw);
+    user-select: none;
+    z-index: 1;
+    transition: 0.2s;
+}
+.containerTabla .botones .boton.active {
+    width: min(10vh, 8vw);
+    height: min(10vh, 8vw);
+    margin-top: max(-2vh, -1.6vw); /* para contrarrestar el aumento de tamaño */
+    transform: translateY(min(1vh, 0.8vw)); /* para contrarrestar el aumento de tamaño */
+    background: rgba(255, 255, 255, 0.075);
+    backdrop-filter: blur(20px);
+    cursor: pointer;
+    pointer-events: auto;
+}
+.containerTabla .botones .boton.active.aceptar {
+    border: 3px solid rgba(50, 250, 0, 0.8);
+    box-shadow: 8px 8px 30px rgba(50, 250, 0, 0.20);
+    animation: acceptActive 5s linear infinite;
+}
+@keyframes acceptActive {
+    0%, 30%, 70%, 100% {
+        background: rgba(255, 255, 255, 0.075);
+    }
+    40%, 60% {
+        background: rgba(50, 250, 0, 0.5);
+    }
+}
+.containerTabla .botones .boton.active.aceptar.blocked,
+.containerTabla .botones .boton.aceptar.blocked {
+    width: min(8vh, 6.5vw);
+    height: min(8vh, 6.5vw);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    cursor: default;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    animation: none;
+}
+.containerTabla .botones .boton.active.aceptar.blocked::after,
+.containerTabla .botones .boton.aceptar.blocked::after {
+    content: "";
+    position: absolute;
+    bottom: max(-8vh, -6.5vw);
+    width: min(8vh, 6.5vw);
+    height: min(8vh, 6.5vw);
+    background: rgba(50, 250, 0, 0.8);
+    animation: goUp 4s linear normal;
+}
+@keyframes goUp {
+    0% {
+        bottom: max(-8vh, -6.5vw);
+    }
+    100% {
+        bottom: 0;
+    }
+}
+.containerTabla .botones .boton.active.aceptar.blocked i {
+    color: #07262e;
+    font-size: min(4vh, 3.2vw);
+    user-select: none;
+    transition: 0.2s;
+    animation: none;
+}
+.containerTabla .botones .boton.active.cancelar {
+    border: 3px solid rgba(255, 0, 0, 0.8);
+    box-shadow: 8px 8px 30px rgba(255, 0, 0, 0.20);
+    animation: cancelActive 5s linear infinite;
+}
+@keyframes cancelActive {
+    0%, 30%, 70%, 100% {
+        background: rgba(255, 255, 255, 0.075);
+    }
+    40%, 60% {
+        background: rgba(255, 0, 0, 0.5);
+    }
+}
+.containerTabla .botones .boton.active.aceptar i {
+    color: rgba(50, 250, 0, 0.8);
+    font-size: min(5vh, 4vw);
+    animation: acceptActivei 5s linear infinite;
+}
+@keyframes acceptActivei {
+    0%, 35%, 65%, 100% {
+        color: rgba(50, 250, 0, 0.8);
+    }
+    45%, 55% {
+        color: #07262e;
+    }
+}
+.containerTabla .botones .boton.active.cancelar i {
+    color: rgba(255, 0, 0, 0.8);
+    font-size: min(5vh, 4vw);
+    animation: cancelActivei 5s linear infinite;
+}
+@keyframes cancelActivei {
+    0%, 35%, 65%, 100% {
+        color: rgba(255, 0, 0, 0.8);
+    }
+    45%, 55% {
+        color: #07262e;
+    }
+}
+.containerTabla .botones .boton.active.aceptar:hover {
+    background: rgba(50, 250, 0, 0.5);
+    animation: none;
+}
+.containerTabla .botones .boton.active.aceptar:hover i {
+    color: #07262e;
+    animation: none;
+}
+.containerTabla .botones .boton.active.cancelar:hover {
+    background: rgba(255, 0, 0, 0.5);
+    animation: none;
+}
+.containerTabla .botones .boton.active.cancelar:hover i {
+    color: #07262e;
+    animation: none;
+}
+.containerLista .palabrasEncontradas {
+    position: relative;
+    color: #fff;
+    font-size: min(calc(56vh / 16), calc(42vw / 16));
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: unset;
+    text-align: center;
+}
+.containerLista .lista {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+    width: 100%;
+    height: 70%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    text-align: center;
+    align-items: center;
+    list-style-type: none;
+}
+.containerLista .lista::-webkit-scrollbar {
+    width: 0;
+}
+.containerLista .lista li {
+    position: relative;
+    justify-content: center;
+    width: 80%;
+    margin-bottom: 2.5vh;
+    font-size: min(calc(56vh / 26), calc(42vw / 26));
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    cursor: unset;
+    user-select: none;
+    transition: 0.35s;
+}
+.containerLista .lista li:hover {
+    width: 85%;
+    letter-spacing: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 15px 15px 45px rgba(0, 0, 0, 0.2);
+    transition: 0.35s;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styleLogin.css">
+    <title>Login</title>
+</head>
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <div class="square" style="--i:0;"></div>
+            <div class="square" style="--i:1;"></div>
+            <div class="square" style="--i:2;"></div>
+            <div class="square" style="--i:3;"></div>
+            <div class="square" style="--i:4;"></div>
+            <!-- style="--i:0;" i es una variable que toma distintos valores
+            para cada square distinto, esta variable se usa para que el
+            delay de la animacion de cada cuadrado sea distinto (o sea
+            para que no se muevan todos a la misma vez)-->
+            <div class="container">
+                <div class="form">
+                    <h2>Ingresar</h2>
+                    <form>
+                        <div class="inputBox">
+                            <span class="floating-label">Usuario</span>
+                            <input type="text">
+                        </div>
+                        <div class="inputBox">
+                            <span class="floating-label">Contraseña</span>
+                            <input type="password">
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Login">
+                        </div>
+                        <div class="texto">
+                            <p class="forget">Se olvido de la contraseña? <a href="#">Click aqui</a></p>
+                            <p class="forget">No tiene cuenta? <a href="#">Registrese</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
